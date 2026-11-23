@@ -1,0 +1,7 @@
+# Vercel link folders and local env files (created by the Vercel CLI)
+.vercel
+.env*.local
+
+# Deploy logs and temp output
+*-log.txt
+deploy-main-url.txt
