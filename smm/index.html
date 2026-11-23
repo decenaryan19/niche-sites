@@ -272,18 +272,24 @@ footer a{color:var(--muted)}.others{display:flex;gap:16px;flex-wrap:wrap}
   <div class="fun">
     <div class="sites rv">
       <div class="sitepick" id="sitepick" role="group" aria-label="Choose a website">
-        <button type="button" aria-pressed="true" data-v="media/web-recap-group.mp4" data-u="therecapgroup.com" data-h="https://therecapgroup.com/">The Recap Group</button>
+        <button type="button" aria-pressed="true" data-i="img/web/site-john-carrillo.jpg" data-u="johncarrillo.site" data-h="https://www.johncarrillo.site/">John Carrillo</button>
+        <button type="button" aria-pressed="false" data-i="img/web/site-rhino-decks.jpg" data-u="rhinodecks.ca" data-h="https://rhinodecks.ca/">Rhino Decks</button>
+        <button type="button" aria-pressed="false" data-i="img/web/site-bc-building-doctors.jpg" data-u="bcbuildingdoctors.ca" data-h="https://bcbuildingdoctors.ca/">BC Building Doctors</button>
+        <button type="button" aria-pressed="false" data-i="img/web/site-recap-group.jpg" data-u="therecapgroup.com" data-h="https://therecapgroup.com/">The Recap Group</button>
+        <button type="button" aria-pressed="false" data-i="img/web/site-mushroom.jpg" data-u="mushroom-website-five.vercel.app" data-h="https://mushroom-website-five.vercel.app/">Suwanee Bell Farms</button>
         <button type="button" aria-pressed="false" data-v="media/web-bc-traffic.mp4" data-u="bctrafficcoating.com" data-h="https://bctrafficcoating.com/">BC Traffic Coating</button>
         <button type="button" aria-pressed="false" data-v="media/web-all-florida.mp4" data-u="all-florida-cpte-dwebsite.vercel.app" data-h="https://all-florida-cpte-dwebsite.vercel.app/">All Florida CPTED</button>
       </div>
-      <a class="browser" id="browser" href="https://therecapgroup.com/" target="_blank" rel="noopener" style="display:block;text-decoration:none">
-        <div class="dots"><i></i><i></i><i></i><span id="burl">therecapgroup.com</span></div>
-        <video id="bvid" src="media/web-recap-group.mp4" muted loop playsinline autoplay aria-label="Website preview"></video>
+      <a class="browser" id="browser" href="https://www.johncarrillo.site/" target="_blank" rel="noopener" style="display:block;text-decoration:none">
+        <div class="dots"><i></i><i></i><i></i><span id="burl">johncarrillo.site</span></div>
+        <img id="bimg" src="img/web/site-john-carrillo.jpg" alt="Website preview" style="width:100%;aspect-ratio:1280/860;object-fit:cover;object-position:top">
+        <video id="bvid" muted loop playsinline aria-label="Website preview" hidden></video>
       </a>
+      <p style="color:var(--muted);font-size:13px">Tap a name to switch. Click the preview to open the live site.</p>
     </div>
     <div class="rv">
       <div class="phones">
-        <a class="phone" href="https://mushroom-website-001.vercel.app/" target="_blank" rel="noopener"><img src="img/web/mushroom-mobile.jpg" alt="Suwanee Bell Farms mobile site" loading="lazy"></a>
+        <a class="phone" href="https://mushroom-website-five.vercel.app/" target="_blank" rel="noopener"><img src="img/web/mushroom-mobile.jpg" alt="Suwanee Bell Farms mobile site" loading="lazy"></a>
         <a class="phone" href="https://pool-service-003.vercel.app/" target="_blank" rel="noopener"><img src="img/web/duphore-pool-mobile.jpg" alt="Duphore Pool Repair mobile site" loading="lazy"></a>
         <a class="phone" href="https://gardenpool-001.vercel.app/" target="_blank" rel="noopener"><img src="img/web/garden-pool-mobile.jpg" alt="Garden Pool mobile site" loading="lazy"></a>
       </div>
@@ -300,9 +306,6 @@ footer a{color:var(--muted)}.others{display:flex;gap:16px;flex-wrap:wrap}
   <div class="px rv">Brand kits &amp; graphics</div>
   <h2 class="rv">Posts that look like the brand</h2>
   <div class="gallery rv">
-    <figure><img src="img/ccgm-alignment.png" alt="Alignment is your Assignment social post" loading="lazy"><figcaption>Alignment is your Assignment<span>Church social post</span></figcaption></figure>
-    <figure><img src="img/ccgm-miracles.png" alt="God Works Miracles social post" loading="lazy"><figcaption>God Works Miracles<span>Church social post</span></figcaption></figure>
-    <figure><img src="img/ccgm-coaching.png" alt="Coaching and Mentoring event post" loading="lazy"><figcaption>Coaching &amp; Mentoring<span>Event post</span></figcaption></figure>
     <figure><img src="img/recap-group.png" alt="The Recap Group brand kit" loading="lazy"><figcaption>The Recap Group<span>Brand kit</span></figcaption></figure>
     <figure><img src="img/suwanee-bell-farms.png" alt="Suwanee Bell Farms brand kit" loading="lazy"><figcaption>Suwanee Bell Farms<span>Brand kit</span></figcaption></figure>
     <figure><img src="img/duphore-pool.png" alt="Duphore Pool Repair brand kit" loading="lazy"><figcaption>Duphore Pool Repair<span>Brand kit</span></figcaption></figure>
@@ -443,7 +446,10 @@ box.addEventListener('click',function(e){var b=e.target.closest('.snd'),v=b?b.pa
 
 /* website switcher */
 var pick=document.getElementById('sitepick'),bv=document.getElementById('bvid');
-pick.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;pick.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});bv.src=b.dataset.v;play(bv);document.getElementById('burl').textContent=b.dataset.u;document.getElementById('browser').href=b.dataset.h});
+var bi=document.getElementById('bimg');
+pick.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;pick.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+  if(b.dataset.v){bi.hidden=true;bv.hidden=false;bv.src=b.dataset.v;play(bv)}else{bv.pause();bv.hidden=true;bi.hidden=false;bi.src=b.dataset.i;bi.alt=b.textContent+" website"}
+  document.getElementById('burl').textContent=b.dataset.u;document.getElementById('browser').href=b.dataset.h});
 
 /* booking calendar */
 var cal=document.getElementById('cal');
