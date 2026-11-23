@@ -23,7 +23,8 @@
   color-scheme:dark;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
+main{overflow-x:clip}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;overflow-x:hidden;
   background-image:radial-gradient(ellipse 70% 45% at 75% -5%,#f28c2822,transparent),radial-gradient(ellipse 50% 40% at 0% 30%,#8a63d21c,transparent)}
 img,video{max-width:100%;display:block}
@@ -171,6 +172,22 @@ footer a{color:var(--muted)}.others{display:flex;gap:16px;flex-wrap:wrap}
 .totop:hover{border-color:var(--accent);color:var(--accent)}
 .totop svg{width:20px;height:20px}
 
+/* AI office floor */
+.aio{display:grid;grid-template-columns:1fr 1.6fr;gap:26px;align-items:center}
+@media (max-width:900px){.aio{grid-template-columns:1fr}}
+.floorwrap{position:relative;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#1a1726;box-shadow:0 30px 80px #0009}
+.floorwrap .bar{display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--line);font-family:var(--f-pixel);font-size:8px;color:var(--muted)}
+.floorwrap .bar b{color:var(--green)}
+#floor{display:block;width:100%;height:auto;image-rendering:pixelated}
+.agents{display:grid;gap:10px;margin-top:20px}
+.agent{display:flex;gap:12px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14px}
+.agent canvas{width:28px;height:34px;image-rendering:pixelated;flex:none}
+.agent b{font-family:var(--f-display)}
+.agent span{color:var(--muted);font-size:13px}
+.agent i{margin-left:auto;font-style:normal;font-family:var(--f-pixel);font-size:7px;color:var(--green)}
+/* tiny walkers along the bottom of the screen */
+#lane{position:fixed;left:0;right:0;bottom:0;height:64px;width:100%;pointer-events:none;z-index:45;image-rendering:pixelated}
+
 /* scroll reveal (only when JS runs) */
 .js .rv{opacity:0;transform:perspective(900px) translateY(40px) rotateX(10deg);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
 .js .rv.in{opacity:1;transform:none}
@@ -183,7 +200,7 @@ footer a{color:var(--muted)}.others{display:flex;gap:16px;flex-wrap:wrap}
 <div class="progress" id="progress"></div>
 <nav class="top"><div class="wrap">
   <a class="brand" href="#top"><canvas width="10" height="10" data-me aria-hidden="true"></canvas>Ryan Decena <span>/ social</span></a>
-  <ul><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#funnels">Funnels</a></li><li><a href="#experience">Experience</a></li><li><a href="#book">Book a call</a></li></ul>
+  <ul><li><a href="#services">Services</a></li><li><a href="#ai-office">AI Office</a></li><li><a href="#work">Work</a></li><li><a href="#funnels">Funnels</a></li><li><a href="#experience">Experience</a></li><li><a href="#book">Book a call</a></li></ul>
   <a class="btn pri sm" href="#book">Book a call</a>
 </div></nav>
 
@@ -221,7 +238,23 @@ footer a{color:var(--muted)}.others{display:flex;gap:16px;flex-wrap:wrap}
     <article class="card rv"><div class="ic">🚀</div><h3>Boosts &amp; paid social</h3><p>Put budget behind what already works.</p><ul><li>Boosted posts and Meta Ads Manager</li><li>Targeting and creative tests</li><li>Adjusted based on results</li></ul></article>
     <article class="card rv"><div class="ic">📊</div><h3>Analytics &amp; reports</h3><p>Know what grew and what to change.</p><ul><li>Meta Business Suite, TikTok, YouTube analytics</li><li>Reach, engagement, views, watch time</li><li>Monthly report with next steps</li></ul></article>
     <article class="card rv"><div class="ic">🧲</div><h3>Landing pages &amp; funnels</h3><p>Somewhere for your followers to go.</p><ul><li>GoHighLevel funnels</li><li>WordPress / Elementor landing pages</li><li>On-page SEO, fast, mobile-first</li></ul></article>
+    <article class="card rv"><div class="ic">🤖</div><h3>AI agents for your content</h3><p>An AI team that works alongside me on your account.</p><ul><li>Trend and competitor research agents</li><li>Caption, hook and script drafting</li><li>Shared brand memory so every post sounds like you</li></ul></article>
     <article class="card rv"><div class="ic">⚙️</div><h3>Lead follow-up &amp; email</h3><p>Leads never sit in a DM again.</p><ul><li>GHL pipelines and workflows</li><li>Email nurture sequences (MailerLite, GHL)</li><li>n8n, Make.com, Zapier</li></ul></article>
+  </div>
+</div></section>
+
+<section id="ai-office"><div class="wrap">
+  <div class="aio">
+    <div class="rv">
+      <div class="px">AI agents · AI office</div>
+      <h2>My team never sleeps. Half of it is AI.</h2>
+      <p class="intro" style="margin-bottom:0">I built my own office of AI agents in Claude Code. They share one memory about your brand, research trends, draft captions and scripts, and build pages, so I can deliver more content, faster, and spend my time on what needs a human.</p>
+      <div class="agents" id="agents"></div>
+    </div>
+    <div class="floorwrap rv">
+      <div class="bar"><span>FLOOR 2 · <b>AI OFFICE ONLINE</b></span><span id="floorStatus">5 AT WORK</span></div>
+      <canvas id="floor" width="720" height="380" aria-label="Animated office where Ryan and his AI agents walk between desks and work on laptops"></canvas>
+    </div>
   </div>
 </div></section>
 
@@ -339,6 +372,7 @@ footer a{color:var(--muted)}.others{display:flex;gap:16px;flex-wrap:wrap}
   <p><b>Want your pages handled?</b><span>Let's connect. Free 30-min call.</span></p>
   <div class="btns"><a class="btn ghost sm" href="mailto:ryan.barbacena.decena@gmail.com?subject=Social%20media%20management">Email</a><a class="btn pri sm" href="#book">Hire me</a></div>
 </div>
+<canvas id="lane" aria-hidden="true"></canvas>
 <button class="totop" id="totop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></button>
 
 <script>
@@ -427,6 +461,125 @@ top2.addEventListener('click',function(){scrollTo({top:0,behavior:reduce?'auto':
 document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){var v=b.dataset.copy;if(navigator.clipboard)navigator.clipboard.writeText(v).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1400)},function(){})})});
 document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=new Date().getFullYear()});
 document.addEventListener('visibilitychange',function(){if(document.hidden)vids.forEach(function(v){v.pause()})});
+})();
+</script>
+
+<script>
+/* ===== AI office: blocky workers that walk, sit and type on laptops ===== */
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function shade(h,a){var n=parseInt(h.slice(1),16),r=n>>16&255,g=n>>8&255,b=n&255;r=Math.max(0,Math.min(255,r+a));g=Math.max(0,Math.min(255,g+a));b=Math.max(0,Math.min(255,b+a));return"rgb("+r+","+g+","+b+")"}
+/* x,y = feet; u = pixels per unit. Blocky body with a darker side face for a 3D look. */
+function blocky(c,x,y,u,o,st,t){
+  var R=function(col,px,py,w,h){c.fillStyle=col;c.fillRect(Math.round(x+px*u),Math.round(y+py*u),Math.ceil(w*u),Math.ceil(h*u))};
+  var sit=st.sit,ph=st.walk?Math.sin(t/110+st.seed):0,bob=st.walk?Math.abs(ph)*.6:0,dir=st.dir||1;
+  var top=sit?-20:-25;y-=bob*u;
+  /* legs */
+  if(sit){R(o.pants,-4,top+16,3.6,4);R(o.pants,.4,top+16,3.6,4);R(shade(o.pants,-30),-4,top+19,8,1)}
+  else{var l=ph*2;R(o.pants,-4,-9+Math.max(0,l)*.4,3.6,9-Math.max(0,l)*.4);R(o.pants,.4,-9+Math.max(0,-l)*.4,3.6,9-Math.max(0,-l)*.4);R("#16131f",-4,-1,3.6,1);R("#16131f",.4,-1,3.6,1)}
+  /* torso */
+  R(o.shirt,-4,top+8,8,8);R(shade(o.shirt,-35),dir>0?3:-4,top+8,1,8);
+  if(o.logo)R(o.logo,-1,top+10,2,2);
+  /* arms */
+  var a=st.walk?ph*2:0;
+  if(st.type){var tp=Math.sin(t/70+st.seed)>0?0:-.6;R(o.skin2||o.shirt,-6,top+9,2,4);R(o.skin2||o.shirt,4,top+9,2,4);R(o.skin,-6,top+13+tp,3,1.6);R(o.skin,3,top+13-tp,3,1.6)}
+  else{R(o.skin2||o.shirt,-6,top+8.5+a*.3,2,6);R(o.skin2||o.shirt,4,top+8.5-a*.3,2,6);R(o.skin,-6,top+14.5+a*.3,2,1.6);R(o.skin,4,top+14.5-a*.3,2,1.6)}
+  /* head */
+  if(o.bot){R(o.head,-4,top,8,8);R(shade(o.head,-40),dir>0?3:-4,top,1,8);R("#0e0c16",-3,top+2.5,6,3);var blink=Math.floor(t/1800+st.seed)%5===0&&(t%1800)<160;
+    if(!blink){R(o.eye,-2,top+3.2,1.5,1.5);R(o.eye,.6,top+3.2,1.5,1.5)}R("#9a93ad",-.4,top-2.5,.8,2.5);R(Math.floor(t/400+st.seed)%2?o.eye:"#3a3550",-.8,top-3.6,1.6,1.4)}
+  else{R(o.skin,-4,top,8,8);R(shade(o.skin,-30),dir>0?3:-4,top,1,8);R(o.hair,-4.4,top-1,8.8,3);R(o.hair,dir>0?-4.4:3.4,top+1,1,3);R("#1d1a24",dir>0?-1:-2.5,top+3.5,1.2,1.2);R("#1d1a24",dir>0?1.6:0,top+3.5,1.2,1.2);R("#b0694a",-1,top+6,2,.6)}
+}
+function laptop(c,x,y,u,on,col,t){/* x,y = front-center on desk top */
+  var R=function(cl,px,py,w,h){c.fillStyle=cl;c.fillRect(Math.round(x+px*u),Math.round(y+py*u),Math.ceil(w*u),Math.ceil(h*u))};
+  R("#8f8aa3",-6,-1,12,1.2);R("#5c5870",-5.5,-8,11,7);R(on?col:"#2c2938",-4.8,-7.3,9.6,5.6);
+  if(on){c.globalAlpha=.6;for(var i=0;i<3;i++)R("#ffffff",-4,-6.5+i*1.6,(2+((Math.floor(t/300)+i*3)%6)),.5);c.globalAlpha=1}
+}
+
+/* ---------- floor scene ---------- */
+var cv=document.getElementById('floor');
+if(cv){
+var c=cv.getContext('2d');c.imageSmoothingEnabled=false;var W=cv.width,H=cv.height,U=3;
+var DESKS=[{x:110,y:205},{x:300,y:205},{x:490,y:205},{x:200,y:322},{x:420,y:322},{x:620,y:322}];
+var COFFEE={x:665,y:205};
+var CREW=[
+ {n:"Ryan",role:"The human in charge",o:{skin:"#e0a878",hair:"#2b2118",shirt:"#f28c28",pants:"#2d2a3a",logo:"#fff3"},say:["Approving the calendar","Replying to a client","Checking the boosts","Final check before posting"]},
+ {n:"Trend Scout",role:"Finds trending sounds, hooks and topics",o:{bot:1,head:"#b9b4c9",eye:"#2f8fd8",shirt:"#2f8fd8",pants:"#23395a",skin:"#cfcade"},say:["3 new trending sounds","Competitor posted a reel","Hashtags ready"]},
+ {n:"Caption Bot",role:"Drafts captions in your brand voice",o:{bot:1,head:"#c9c4d8",eye:"#d64f8a",shirt:"#d64f8a",pants:"#5a2340",skin:"#cfcade"},say:["Drafting 10 hooks","Captions in brand voice","CTA variations done"]},
+ {n:"Script Bot",role:"Writes reel and ad scripts",o:{bot:1,head:"#b4afc6",eye:"#8a63d2",shirt:"#8a63d2",pants:"#34265a",skin:"#cfcade"},say:["Reel script v2","Storyboard for the ad","Shot list ready"]},
+ {n:"Page Builder",role:"Builds landing pages and funnels",o:{bot:1,head:"#bdb8cc",eye:"#3ccf8e",shirt:"#3ccf8e",pants:"#1f4a38",skin:"#cfcade"},say:["Landing page live","Form connected to GHL","Speed score 95+"]}
+];
+CREW.forEach(function(p,i){p.x=DESKS[i].x;p.y=DESKS[i].y;p.desk=i;p.state="sit";p.until=performance.now()+2000+i*900;p.seed=i*1.7;p.dir=1;p.msg=p.say[0]});
+function freeDesk(me){var taken=CREW.filter(function(p){return p!==me}).map(function(p){return p.target!=null?p.target:p.desk});var free=DESKS.map(function(_,i){return i}).filter(function(i){return taken.indexOf(i)<0});return free.length?free[Math.floor(Math.random()*free.length)]:-1}
+function update(t){CREW.forEach(function(p){
+  if(p.state==="sit"&&t>p.until){p.state="walk";var go=Math.random()<.25?"coffee":freeDesk(p);p.target=go;p.desk=null;var d=go==="coffee"?COFFEE:DESKS[go];if(go===-1){p.state="sit";p.desk=0;p.until=t+3000;return}p.tx=d.x;p.ty=d.y}
+  else if(p.state==="walk"){var dx=p.tx-p.x,dy=p.ty-p.y,dist=Math.hypot(dx,dy),sp=1.15;if(dist<sp){p.x=p.tx;p.y=p.ty;
+      if(p.target==="coffee"){p.state="coffee";p.until=t+1800;p.msg="☕ Coffee break"}else{p.state="sit";p.desk=p.target;p.until=t+4500+Math.random()*4000;p.msg=p.say[Math.floor(Math.random()*p.say.length)]}p.target=null}
+    else{p.x+=dx/dist*sp;p.y+=dy/dist*sp;p.dir=dx>=0?1:-1}}
+  else if(p.state==="coffee"&&t>p.until){p.state="sit";p.until=0}
+})}
+function bubble(x,y,txt){c.font="9px 'Press Start 2P', monospace";var w=c.measureText(txt).width+14;var bx=Math.max(4,Math.min(W-w-4,x-w/2)),by=y-24;
+  c.fillStyle="#efeaf6";c.fillRect(bx,by,w,18);c.fillRect(Math.round(x-3),by+18,6,4);c.fillStyle="#13111a";c.fillText(txt,bx+7,by+13)}
+function scene(t){
+  /* wall + window skyline */
+  c.fillStyle="#221d33";c.fillRect(0,0,W,130);c.fillStyle="#2b2541";c.fillRect(0,122,W,8);
+  c.fillStyle="#0f0d1a";c.fillRect(24,18,250,86);c.fillRect(470,18,226,86);
+  for(var i=0;i<14;i++){var bw=16+((i*37)%14),bh=24+((i*53)%50),bx=28+i*18;if(bx<268){c.fillStyle="#1d1a33";c.fillRect(bx,104-bh,bw,bh);if(((i*7+Math.floor(t/900))%3)===0){c.fillStyle="#f0b42988";c.fillRect(bx+4,104-bh+6,3,3)}}}
+  for(var j=0;j<12;j++){var bw2=16+((j*29)%14),bh2=22+((j*41)%55),bx2=474+j*19;if(bx2<690){c.fillStyle="#1d1a33";c.fillRect(bx2,104-bh2,bw2,bh2);if(((j*5+Math.floor(t/1100))%4)===0){c.fillStyle="#2f8fd888";c.fillRect(bx2+5,104-bh2+8,3,3)}}}
+  /* neon sign */
+  c.font="16px 'Press Start 2P', monospace";c.fillStyle="#f28c28";c.globalAlpha=.85+.15*Math.sin(t/300);c.fillText("AI OFFICE",298,64);c.globalAlpha=1;c.fillStyle="#a59db5";c.font="8px 'Press Start 2P', monospace";c.fillText("SOCIAL MEDIA HQ",310,84);
+  /* floor */
+  for(var y=130;y<H;y+=20)for(var x=0;x<W;x+=40){c.fillStyle=((x/40+(y-130)/20)%2)?"#2a2540":"#251f38";c.fillRect(x,y,40,20)}
+  /* coffee machine + plants */
+  c.fillStyle="#4a4560";c.fillRect(COFFEE.x+14,148,26,46);c.fillStyle="#f28c28";c.fillRect(COFFEE.x+20,156,14,8);c.fillStyle="#2b2541";c.fillRect(COFFEE.x+22,176,10,10);
+  [[18,200],[700,340],[18,350]].forEach(function(p){c.fillStyle="#6f5338";c.fillRect(p[0]-7,p[1]-14,14,14);c.fillStyle="#3ccf8e";c.fillRect(p[0]-10,p[1]-30,8,16);c.fillRect(p[0]-2,p[1]-36,8,22);c.fillRect(p[0]+4,p[1]-28,7,14)});
+  /* draw desks + people sorted by depth */
+  var items=[];DESKS.forEach(function(d,i){items.push({y:d.y+.5,draw:function(){desk(d,i,t)}})});
+  CREW.forEach(function(p){items.push({y:p.state==="sit"?p.y:p.y+.1,draw:function(){person(p,t)}})});
+  items.sort(function(a,b){return a.y-b.y}).forEach(function(it){it.draw()});
+  CREW.forEach(function(p){if(p.state!=="walk"){var hy=p.state==="sit"?p.y-20*U-6:p.y-25*U;bubble(p.x,hy,p.msg)}});
+}
+function desk(d,i,t){var occ=CREW.filter(function(p){return p.state==="sit"&&p.desk===i})[0];
+  c.fillStyle="#8b6a4a";c.fillRect(d.x-42,d.y-20,84,10);c.fillStyle="#6f5338";c.fillRect(d.x-42,d.y-10,84,4);c.fillStyle="#5d452f";c.fillRect(d.x-38,d.y-6,6,30);c.fillRect(d.x+32,d.y-6,6,30);
+  laptop(c,d.x,d.y-20,2.4,!!occ,occ?occ.o.shirt:"#333",t)}
+function person(p,t){var st={walk:p.state==="walk",sit:p.state==="sit",type:p.state==="sit",dir:p.dir,seed:p.seed};
+  var fy=p.state==="sit"?p.y-6:p.y+18;
+  c.fillStyle="#0006";c.fillRect(p.x-14,fy-2,28,4);
+  blocky(c,p.x,fy,U,p.o,st,t)}
+/* the sitting person is drawn before the desk (lower y) so the desk front hides their legs */
+CREW.forEach(function(p){});
+var visible=true;
+if('IntersectionObserver' in window)new IntersectionObserver(function(e){visible=e[0].isIntersecting},{rootMargin:"100px"}).observe(cv);
+function loop(t){if(visible&&!document.hidden){update(t);c.clearRect(0,0,W,H);scene(t)}if(!reduce)requestAnimationFrame(loop)}
+requestAnimationFrame(loop);if(document.fonts)document.fonts.ready.then(function(){scene(performance.now())});
+
+/* agent list with mini avatars */
+var list=document.getElementById('agents');
+CREW.forEach(function(p){var row=document.createElement('div');row.className='agent';var m=document.createElement('canvas');m.width=28;m.height=34;var mc=m.getContext('2d');mc.imageSmoothingEnabled=false;blocky(mc,14,33,1.2,p.o,{seed:0,dir:1},0);
+  var tx=document.createElement('div');var b=document.createElement('b');b.textContent=p.n;var s=document.createElement('span');s.textContent=" · "+p.role;tx.append(b,s);var tag=document.createElement('i');tag.textContent="WORKING";row.append(m,tx,tag);list.appendChild(row)});
+}
+
+/* ---------- tiny walkers along the bottom of the screen ---------- */
+var lane=document.getElementById('lane');
+if(lane&&!reduce){
+  var lc=lane.getContext('2d'),dpr=Math.min(2,window.devicePixelRatio||1);
+  function size(){lane.width=innerWidth*dpr;lane.height=64*dpr;lc.setTransform(dpr,0,0,dpr,0,0);lc.imageSmoothingEnabled=false}
+  size();addEventListener('resize',size);
+  var small=innerWidth<640;
+  var WALK=[
+    {o:{skin:"#e0a878",hair:"#2b2118",shirt:"#f28c28",pants:"#2d2a3a"},x:-40,v:.55,lap:true},
+    {o:{bot:1,head:"#c9c4d8",eye:"#d64f8a",shirt:"#d64f8a",pants:"#5a2340",skin:"#cfcade"},x:-260,v:.45},
+    {o:{bot:1,head:"#b9b4c9",eye:"#2f8fd8",shirt:"#2f8fd8",pants:"#23395a",skin:"#cfcade"},x:innerWidth*.55,v:-.5,lap:true}
+  ];
+  if(small)WALK.pop();
+  function lloop(t){lc.clearRect(0,0,innerWidth,64);
+    WALK.forEach(function(w,i){w.x+=w.v;if(w.v>0&&w.x>innerWidth+40)w.x=-40-Math.random()*300;if(w.v<0&&w.x<-40)w.x=innerWidth+40+Math.random()*300;
+      var u=small?1.4:1.8,fy=60;lc.fillStyle="#0005";lc.fillRect(w.x-9*u/1.8,fy-1,18*u/1.8,2);
+      blocky(lc,w.x,fy,u,w.o,{walk:true,dir:w.v>0?1:-1,seed:i*2},t);
+      if(w.lap){var lx=w.x+(w.v>0?6:-6)*u,ly=fy-14*u;lc.fillStyle="#8f8aa3";lc.fillRect(lx-4*u,ly,8*u,1.2*u);lc.fillStyle="#5c5870";lc.fillRect(lx-3.5*u,ly-4*u,7*u,4*u);lc.fillStyle=w.o.shirt;lc.fillRect(lx-3*u,ly-3.5*u,6*u,3*u)}
+    });
+    requestAnimationFrame(lloop)}
+  requestAnimationFrame(lloop);
+}else if(lane){lane.remove()}
 })();
 </script>
 </body>
