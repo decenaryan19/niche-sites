@@ -172,6 +172,20 @@ footer a{color:var(--muted)}.others{display:flex;gap:16px;flex-wrap:wrap}
 .totop:hover{border-color:var(--accent);color:var(--accent)}
 .totop svg{width:20px;height:20px}
 
+/* trusted-by marquee */
+.trust{margin-top:34px;border-block:1px solid var(--line);padding:18px 0;overflow:hidden;position:relative}
+.trust::before,.trust::after{content:"";position:absolute;top:0;bottom:0;width:60px;z-index:1;pointer-events:none}
+.trust::before{left:0;background:linear-gradient(90deg,var(--bg),transparent)}.trust::after{right:0;background:linear-gradient(-90deg,var(--bg),transparent)}
+.trust .lbl{font-family:var(--f-pixel);font-size:8px;color:var(--muted);text-align:center;margin-bottom:14px}
+.track{display:flex;gap:14px;width:max-content;animation:marq 38s linear infinite}
+.trust:hover .track{animation-play-state:paused}
+@keyframes marq{to{transform:translateX(-50%)}}
+.brandpill{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel);text-decoration:none;white-space:nowrap;font-family:var(--f-display);font-weight:700;font-size:15px;transition:border-color .2s,transform .2s}
+.brandpill:hover{border-color:var(--accent);transform:translateY(-2px)}
+.brandpill i{width:26px;height:26px;border-radius:7px;display:grid;place-items:center;font-style:normal;font-size:11px;color:#13111a;font-family:var(--f-pixel)}
+.brandpill small{font-family:var(--f-body);font-weight:500;font-size:12px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.track{flex-wrap:wrap;width:auto;justify-content:center}.track .dup{display:none}}
+
 /* AI office floor */
 .aio{display:grid;grid-template-columns:1fr 1.6fr;gap:26px;align-items:center}
 @media (max-width:900px){.aio{grid-template-columns:1fr}}
@@ -224,6 +238,10 @@ footer a{color:var(--muted)}.others{display:flex;gap:16px;flex-wrap:wrap}
   <div class="stat"><b>4 platforms</b><span>Facebook, Instagram, TikTok, YouTube</span></div>
   <div class="stat"><b>Content + funnels</b><span>posts, ads, landing pages, GHL</span></div>
   <div class="stat"><b>US / UK hours</b><span>flexible time zones</span></div>
+</div>
+<div class="trust rv" aria-label="Brands I've built for">
+  <div class="lbl">Brands I've built websites, funnels and content for</div>
+  <div class="track" id="track"></div>
 </div></div>
 
 <section id="services"><div class="wrap">
@@ -443,6 +461,12 @@ if('IntersectionObserver' in window){var vo=new IntersectionObserver(function(es
 box.addEventListener('click',function(e){var b=e.target.closest('.snd'),v=b?b.parentNode.querySelector('video'):e.target.closest('video');if(!v)return;var on=v.muted;
   box.querySelectorAll('video').forEach(function(o){if(o!==v){o.muted=true;o.parentNode.querySelector('.snd').textContent='🔇'}});
   v.muted=!on;var s=v.parentNode.querySelector('.snd');s.textContent=on?'🔊':'🔇';s.setAttribute('aria-pressed',String(on));s.setAttribute('aria-label',on?'Mute':'Turn sound on');if(on)play(v)});
+
+/* trusted-by strip (real client sites) */
+var BRANDS=[["The Recap Group","Marketing","https://therecapgroup.com/","#f28c28"],["Rhino Decks","Deck builder · Canada","https://rhinodecks.ca/","#c0442b"],["BC Building Doctors","Building envelope · Canada","https://bcbuildingdoctors.ca/","#2f8fd8"],["John Carrillo","Video editor brand","https://www.johncarrillo.site/","#e8711c"],["Suwanee Bell Farms","Mushroom farm","https://mushroom-website-five.vercel.app/","#3ccf8e"],["BC Traffic Coating","Coatings","https://bctrafficcoating.com/","#f0b429"],["All Florida CPTED","Security consulting","https://all-florida-cpte-dwebsite.vercel.app/","#8a63d2"],["Duphore Pool Repair","Pool service","https://pool-service-003.vercel.app/","#19c3b0"],["Garden Pool","Pool service","https://gardenpool-001.vercel.app/","#d64f8a"]];
+var tr=document.getElementById('track');
+function pills(dup){return BRANDS.map(function(b){var ini=b[0].split(/\s+/).map(function(w){return w[0]}).join('').slice(0,2);return '<a class="brandpill'+(dup?' dup':'')+'" href="'+b[2]+'" target="_blank" rel="noopener"'+(dup?' tabindex="-1" aria-hidden="true"':'')+'><i style="background:'+b[3]+'">'+ini+'</i>'+b[0]+' <small>'+b[2].replace(/^https?:\/\/(www\.)?/,'').replace(/\/$/,'')+'</small></a>'}).join('')}
+tr.innerHTML=pills(false)+pills(true);
 
 /* website switcher */
 var pick=document.getElementById('sitepick'),bv=document.getElementById('bvid');
