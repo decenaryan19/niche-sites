@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ryan Decena | Short-Form &amp; AI Video Editor</title>
-<meta name="description" content="Reels, TikToks, Shorts, ads and AI video (Kling, Veo, Seedance) edited by Ryan Decena, a video editor from the Philippines working with international clients.">
+<meta name="description" content="Short-form and AI video editor from the Philippines. Scroll-stopping 9:16 ads and reels with strong hooks, jump cuts, bold captions and AI scenes (Kling, Veo, Seedance, ElevenLabs). 5-8 finished videos a day, revisions in under an hour.">
 <meta property="og:title" content="Ryan Decena | Short-Form & AI Video Editor">
-<meta property="og:description" content="Hook-first reels, ads and AI video for brands and creators.">
+<meta property="og:description" content="Scroll-stopping 9:16 ads and reels, 5-8 a day, revisions in under an hour. Available for US/UK hours.">
 <meta property="og:image" content="https://video.decenaryan.site/og.jpg">
 <meta property="og:url" content="https://video.decenaryan.site/">
 <meta name="theme-color" content="#0F172A">
@@ -26,24 +26,40 @@
 @media (max-width:480px){.work.wide{grid-column:auto}}
 .player{position:relative;border-radius:14px;overflow:hidden;background:#0a0f1d;border:1px solid var(--line);aspect-ratio:9/16}
 .work.wide .player{aspect-ratio:16/9}
-.player img,.player video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.player video{object-fit:contain;background:#000}
-.player button{position:absolute;inset:0;border:0;background:linear-gradient(transparent 55%,#0009);cursor:pointer;display:grid;place-items:center}
-.player button i{width:58px;height:58px;border-radius:50%;background:#0f172acc;display:grid;place-items:center;transition:.2s}
-.player button i::after{content:"";border-left:17px solid #fff;border-block:11px solid transparent;margin-left:5px}
-.player button:hover i{background:var(--accent);transform:scale(1.08)}
+.player video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#000}
 .work h3{font-size:16px;line-height:1.3}
 .work p{font-size:13px;color:var(--muted)}
 .work .row{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
 .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
 .tools div{border:1px solid var(--line);border-radius:12px;padding:14px;font-weight:600}
 .tools span{display:block;font-size:12px;color:var(--muted);font-weight:400}
+/* autoplay players */
+.player video{cursor:pointer}
+.snd{position:absolute;right:10px;bottom:10px;z-index:2;width:38px;height:38px;border-radius:50%;border:0;background:#0f172acc;color:#fff;font-size:16px;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(6px)}
+.snd:hover{background:var(--accent);color:var(--on-accent)}
+.snd:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hint{font-size:13px;color:var(--muted);margin:-18px 0 22px}
+/* experience */
+.xp{display:grid;gap:16px}
+.xp .card{display:grid;gap:4px}
+.xp .head{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.xp .when{font-family:var(--f-mono);font-size:12px;color:var(--accent)}
+.xp .where{font-size:13px;color:var(--muted)}
+.setup{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.setup span{font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.setup b{color:var(--fg);font-weight:600}
+/* back to top */
+.totop{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:30;width:48px;height:48px;border-radius:50%;border:1px solid color-mix(in srgb,var(--accent) 60%,transparent);background:var(--accent);color:var(--on-accent);display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 30px #0008;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s}
+.totop.show{opacity:1;transform:none;pointer-events:auto}
+.totop:hover{filter:brightness(1.1)}
+.totop:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.totop svg{width:22px;height:22px}
 </style>
 </head>
 <body>
 <nav class="top"><div class="wrap">
   <a class="brand" href="#top">Ryan Decena <span>/ video</span></a>
-  <ul><li><a href="#work">Work</a></li><li><a href="#services">Services</a></li><li><a href="#process">Process</a></li><li><a href="#about">About</a></li></ul>
+  <ul><li><a href="#work">Work</a></li><li><a href="#services">Services</a></li><li><a href="#experience">Experience</a></li><li><a href="#process">Process</a></li></ul>
   <a class="btn solid sm" href="#contact">Hire me</a>
 </div></nav>
 
@@ -51,19 +67,21 @@
 <header class="hero"><div class="wrap">
   <span class="mono">Short-form &amp; AI video editor</span>
   <h1>Reels that stop the scroll in the <em>first 2 seconds.</em></h1>
-  <p class="lead">I edit TikToks, Reels, Shorts and ads with tight pacing, clean captions and a hook up front, and I make AI product scenes with Kling, Veo and Seedance when you don't have footage.</p>
+  <p class="lead">I edit 9:16 ads and reels built to stop the scroll: strong hooks, fast jump cuts, punch-ins, bold captions, B-roll and sound design. I pair Premiere Pro, After Effects and CapCut with AI tools like Kling, Veo, Seedance and ElevenLabs, so you get more finished videos, faster.</p>
   <div class="cta"><a class="btn solid" href="#work">Watch the work</a><a class="btn ghost" href="#contact">Get a quote</a></div>
   <div class="facts">
-    <div><b>8 yrs</b><span>weekly church video &amp; livestream</span></div>
-    <div><b>2 yrs</b><span>editing for international clients</span></div>
-    <div><b>9:16 · 1:1 · 16:9</b><span>every format, platform-ready</span></div>
+    <div><b>6+ yrs</b><span>editing experience</span></div>
+    <div><b>5–8 a day</b><span>finished 30–60s ads or reels</span></div>
+    <div><b>20 min–1 hr</b><span>revision turnaround</span></div>
+    <div><b>US / UK hours</b><span>flexible time zones</span></div>
   </div>
 </div></header>
 
 <section id="work"><div class="wrap">
   <span class="mono">Portfolio</span>
   <h2>Selected edits</h2>
-  <p class="intro">Tap any clip to play it here. Real client and practice edits across ads, reels, real estate, podcasts and AI video.</p>
+  <p class="intro">Real client and practice edits across ads, reels, real estate, podcasts and AI video.</p>
+  <p class="hint">Videos play on their own, muted. Tap a video or the 🔇 button to hear it.</p>
   <div class="filters" role="group" aria-label="Filter videos" id="filters"></div>
   <div class="works" id="works"></div>
 </div></section>
@@ -72,18 +90,40 @@
   <span class="mono">Services</span>
   <h2>What I can take off your plate</h2>
   <div class="grid g3">
-    <div class="card"><span class="tag">Short-form</span><h3>Reels, TikToks &amp; Shorts</h3><p>Raw footage in, scroll-stopping vertical edits out.</p><ul><li>Hook in the first 2 seconds</li><li>Animated captions and text overlays</li><li>Music, SFX, punch-ins, transitions</li></ul></div>
-    <div class="card"><span class="tag">AI video</span><h3>AI product &amp; UGC ads</h3><p>Ads without a film shoot, built from AI scenes.</p><ul><li>Kling, Google Veo, Seedance, Nano Banana Pro</li><li>AI UGC, song ads, claymation, Pixar-style</li><li>Multiple variations for testing</li></ul></div>
-    <div class="card"><span class="tag">Long-form</span><h3>Podcasts, events &amp; YouTube</h3><p>Long edits, plus the short clips cut from them.</p><ul><li>Podcast and interview cutdowns</li><li>Event, church and real estate films</li><li>Livestream setup with OBS</li></ul></div>
+    <div class="card"><span class="tag">Short-form</span><h3>Ads, Reels, TikToks &amp; Shorts</h3><p>Raw footage in, scroll-stopping 9:16 edits out.</p><ul><li>Strong hooks, fast jump cuts, punch-ins</li><li>Bold captions that work with or without sound</li><li>B-roll, speed ramps, sound design, transitions</li></ul></div>
+    <div class="card"><span class="tag">AI video</span><h3>AI UGC, avatars &amp; product ads</h3><p>Ads without a film shoot, built from AI scenes and voices.</p><ul><li>Kling, Google Veo, Seedance, Google Flow, Nano Banana Pro</li><li>AI avatar presenters and ElevenLabs voiceovers</li><li>AI UGC, song ads, claymation, Pixar-style</li></ul></div>
+    <div class="card"><span class="tag">Volume</span><h3>More variations, faster</h3><p>Batch work for brands that test a lot of creatives.</p><ul><li>5–8 finished 30–60s videos per day</li><li>Hook and caption variations drafted with Claude and Groq</li><li>n8n, FFmpeg and HyperFrames automation for batch renders</li></ul></div>
+    <div class="card"><span class="tag">Repurposing</span><h3>Long videos into shorts</h3><p>One long video, many clips ready to post.</p><ul><li>Podcast, interview and event cutdowns</li><li>Every size: 9:16, 1:1, 16:9</li><li>Quick revisions to keep your schedule on track</li></ul></div>
+    <div class="card"><span class="tag">Long-form</span><h3>Events, YouTube &amp; real estate</h3><p>Longer edits with the same care for pacing.</p><ul><li>Church, event and real estate films</li><li>Livestream setup with OBS Studio</li><li>Motion graphics and text overlays</li></ul></div>
   </div>
   <h3 style="margin:36px 0 12px;font-size:18px">Tools</h3>
   <div class="tools">
-    <div>CapCut<span>short-form editing</span></div>
-    <div>Premiere Pro<span>long-form editing</span></div>
+    <div>Premiere Pro<span>editing</span></div>
     <div>After Effects<span>motion graphics</span></div>
+    <div>CapCut<span>keyframes, masks, speed ramps</span></div>
     <div>Kling · Veo · Seedance<span>AI video</span></div>
-    <div>Nano Banana Pro<span>AI images</span></div>
-    <div>n8n<span>video workflows</span></div>
+    <div>Google Flow · Nano Banana Pro · OpenAI<span>AI scenes &amp; images</span></div>
+    <div>ElevenLabs<span>AI voice &amp; avatars</span></div>
+    <div>Claude · Groq<span>scripts, hooks, captions</span></div>
+    <div>n8n · FFmpeg · HyperFrames<span>automation &amp; batch renders</span></div>
+    <div>Canva · OBS Studio<span>design &amp; livestreams</span></div>
+  </div>
+  <h3 style="margin:36px 0 4px;font-size:18px">Setup</h3>
+  <div class="setup">
+    <span><b>i7 12th gen</b> CPU</span><span><b>32GB</b> RAM</span><span><b>RTX 3060</b> GPU</span><span>up to <b>700 Mbps</b> internet</span><span>Flexible hours incl. <b>US/UK</b> time zones</span><span>Paid via <b>Wise</b></span>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <span class="mono">Experience</span>
+  <h2>Where I've been editing</h2>
+  <div class="xp">
+    <article class="card"><div class="head"><h3>AI Video &amp; Content Editor</h3><span class="when">2024 – 2026</span></div><div class="where">Freelance · International clients</div>
+      <ul><li>Edited scroll-stopping 9:16 ads and reels for TikTok, Instagram Reels and YouTube Shorts.</li><li>Produced AI UGC, song ads, claymation and Pixar-style videos with Kling, Veo, Seedance, Google Flow, Nano Banana Pro and OpenAI models.</li><li>Created AI avatar presenters and ElevenLabs voiceovers; drafted scripts, hooks and captions with Claude and Groq.</li><li>Built n8n asset-generation workflows and batch renders with FFmpeg and HyperFrames, so clients got more ad variations, faster.</li><li>Delivered 5–8 finished 30–60s videos per day, with revisions in 20 minutes to 1 hour.</li></ul></article>
+    <article class="card"><div class="head"><h3>Freelance Video Editor &amp; Social Media</h3><span class="when">2022 – 2024</span></div><div class="where">Freelance · Premiere Pro, CapCut</div>
+      <ul><li>Edited reels, TikToks and Shorts, turning raw footage into fast-paced, caption-driven content.</li><li>Repurposed long videos into short clips with hooks, B-roll, speed ramps and sound design.</li><li>Exported for every platform and handled quick revisions to keep posting schedules on track.</li></ul></article>
+    <article class="card"><div class="head"><h3>Multimedia &amp; Social Media Team Lead</h3><span class="when">2018 – Present</span></div><div class="where">Church ministry</div>
+      <ul><li>Edit weekly short-form and long-form videos for services, events and social media.</li><li>Set up, run and monitor livestreams with OBS Studio.</li><li>Lead the multimedia team and keep a weekly publishing schedule across Facebook, TikTok, YouTube and Instagram.</li></ul></article>
   </div>
 </div></section>
 
@@ -93,7 +133,7 @@
   <div class="steps">
     <div class="step"><h3>Brief</h3><p>You send footage, references and the platform. I confirm length, style and deadline.</p></div>
     <div class="step"><h3>First cut</h3><p>I deliver a first version with hook, captions and music.</p></div>
-    <div class="step"><h3>Revisions</h3><p>You comment, I adjust until it feels right.</p></div>
+    <div class="step"><h3>Revisions</h3><p>You comment, and I send the update within 20 minutes to 1 hour for a 1-minute video.</p></div>
     <div class="step"><h3>Delivery</h3><p>Final files in every size you need, named and organized.</p></div>
   </div>
 </div></section>
@@ -103,8 +143,8 @@
   <div>
     <span class="mono">About</span>
     <h2>Hi, I'm Ryan.</h2>
-    <p>I've led the multimedia team at our church since 2018: weekly edits, livestreams and social posts for Facebook, TikTok, YouTube and Instagram. Since 2024 I've edited short-form and AI video for international clients.</p>
-    <p>I also have a QA engineering background (Sun Life, Globe Telecom), so I check every export before it reaches you: captions spelled right, audio levels even, sizes correct.</p>
+    <p>I'm a short-form video editor from Quezon City with 6+ years of editing. I've led the multimedia team at our church since 2018, edited reels and Shorts for social media pages since 2022, and since 2024 I've made AI-assisted ads and reels for international clients.</p>
+    <p>I work fast without cutting corners: captions spelled right, audio levels even, every size exported. I'm available for US and UK hours and get paid via Wise.</p>
   </div>
 </div></section>
 
@@ -112,7 +152,7 @@
   <div class="contact" id="contact">
     <span class="mono">Contact</span>
     <h2>Have footage waiting? Let's edit it.</h2>
-    <p style="color:var(--muted);max-width:60ch">Send a short brief: platform, number of videos, deadline and one reference you like. I reply within 24 hours (Philippine time).</p>
+    <p style="color:var(--muted);max-width:60ch">Send a short brief: platform, number of videos, deadline and one reference you like. I work US and UK hours and reply quickly.</p>
     <div class="rows">
       <div class="row">Email <code>ryan.barbacena.decena@gmail.com</code><button class="copy" data-copy="ryan.barbacena.decena@gmail.com">Copy</button></div>    </div>
     <div class="cta" style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn solid" href="mailto:ryan.barbacena.decena@gmail.com?subject=Video%20editing%20project">Email me</a></div>
@@ -153,13 +193,42 @@ var WORKS=[
 var CATS=[['all','All'],['short','Reels & Short-form'],['ai','AI Video'],['ads','Ads'],['real','Real Estate'],['long','Long-form']];
 var LABEL={short:'Short-form',ai:'AI Video',ads:'Ads',real:'Real Estate',long:'Long-form'};
 var grid=document.getElementById('works'),fb=document.getElementById('filters');
-grid.innerHTML=WORKS.map(function(w,i){return '<article class="work'+(w.w?' wide':'')+'" data-c="'+w.c+'"><div class="player"><img src="media/'+w.s+'.jpg" alt="" loading="lazy"><button type="button" data-i="'+i+'" aria-label="Play '+w.t+'"><i></i></button></div><div class="row"><h3>'+w.t+'</h3><span class="tag">'+LABEL[w.c]+'</span></div><p>'+w.d+'</p></article>'}).join('');
+/* Autoplay: every video is muted, loops and plays inline (required for autoplay on iPhone and Android).
+   Videos load and play only while on screen, and pause when scrolled away, to save data. */
+grid.innerHTML=WORKS.map(function(w,i){return '<article class="work'+(w.w?' wide':'')+'" data-c="'+w.c+'"><div class="player">'+
+  '<video muted loop playsinline webkit-playsinline preload="none" disablepictureinpicture poster="media/'+w.s+'.jpg" data-src="media/'+w.s+'.mp4" data-i="'+i+'" aria-label="'+w.t+' video"></video>'+
+  '<button type="button" class="snd" data-i="'+i+'" aria-label="Turn sound on for '+w.t+'" aria-pressed="false">🔇</button></div>'+
+  '<div class="row"><h3>'+w.t+'</h3><span class="tag">'+LABEL[w.c]+'</span></div><p>'+w.d+'</p></article>'}).join('');
 fb.innerHTML=CATS.map(function(c,i){return '<button type="button" data-c="'+c[0]+'" aria-pressed="'+(i===0)+'">'+c[1]+'</button>'}).join('');
-fb.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;fb.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});var c=b.dataset.c;grid.querySelectorAll('.work').forEach(function(a){a.hidden=!(c==='all'||a.dataset.c===c)})});
-grid.addEventListener('click',function(e){var b=e.target.closest('button[data-i]');if(!b)return;var w=WORKS[+b.dataset.i];
-  grid.querySelectorAll('video').forEach(function(v){v.pause()});
-  var v=document.createElement('video');v.src='media/'+w.s+'.mp4';v.controls=true;v.playsInline=true;v.autoplay=true;v.poster='media/'+w.s+'.jpg';
-  b.parentNode.replaceChild(v,b);});
+fb.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;fb.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});var c=b.dataset.c;grid.querySelectorAll('.work').forEach(function(a){a.hidden=!(c==='all'||a.dataset.c===c);if(a.hidden){var v=a.querySelector('video');if(v)v.pause()}})});
+
+var vids=[].slice.call(grid.querySelectorAll('video'));
+function load(v){if(!v.getAttribute('src')){v.src=v.dataset.src;v.preload='auto'}}
+function play(v){load(v);var p=v.play();if(p&&p.catch)p.catch(function(){})}
+function setSound(v,on){
+  vids.forEach(function(o){if(o!==v&&!o.muted){o.muted=true;var b=o.parentNode.querySelector('.snd');b.textContent='🔇';b.setAttribute('aria-pressed','false')}});
+  v.muted=!on;var b=v.parentNode.querySelector('.snd');b.textContent=on?'🔊':'🔇';b.setAttribute('aria-pressed',String(on));
+  b.setAttribute('aria-label',(on?'Mute ':'Turn sound on for ')+WORKS[+v.dataset.i].t);
+  if(on)play(v);
+}
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(en){var v=en.target;
+    if(en.isIntersecting&&en.intersectionRatio>=0.35)play(v);else v.pause();});},{threshold:[0,0.35,0.6],rootMargin:'120px 0px'});
+  vids.forEach(function(v){io.observe(v)});
+}else{vids.forEach(play)}
+grid.addEventListener('click',function(e){
+  var b=e.target.closest('.snd');var v=b?b.parentNode.querySelector('video'):e.target.closest('video');if(!v)return;
+  setSound(v,v.muted);
+});
+document.addEventListener('visibilitychange',function(){if(document.hidden)vids.forEach(function(v){v.pause()})});
+
+/* Back to top: shows after scrolling, stays fixed on screen */
+var toTop=document.createElement('button');toTop.type='button';toTop.className='totop';toTop.setAttribute('aria-label','Back to top');
+toTop.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>';
+document.body.appendChild(toTop);
+function onScroll(){toTop.classList.toggle('show',window.scrollY>400)}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+toTop.addEventListener('click',function(){var smooth=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;window.scrollTo({top:0,behavior:smooth?'smooth':'auto'})});
 </script>
 <script src="site.js"></script>
 </body>
