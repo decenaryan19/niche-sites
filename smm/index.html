@@ -343,7 +343,7 @@ footer a{color:var(--muted)}.others{display:flex;gap:16px;flex-wrap:wrap}
 
 <script>
 /* ===== Booking: paste your Google Calendar appointment schedule link here ===== */
-var BOOKING_URL = ""; // e.g. "https://calendar.app.google/XXXX" or "https://calendar.google.com/calendar/appointments/schedules/XXXX?gv=true"
+var BOOKING_URL = "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2DXCnZ5vP2x5T2P_MixVPa4dTrF7RjM_I82oTRfz6WvA7Xrziw11NybPHQku6_YO0FH02R1GTe?gv=true"; // e.g. "https://calendar.app.google/XXXX" or "https://calendar.google.com/calendar/appointments/schedules/XXXX?gv=true"
 var EMAIL="ryan.barbacena.decena@gmail.com";
 
 (function(){
@@ -413,7 +413,8 @@ pick.addEventListener('click',function(e){var b=e.target.closest('button');if(!b
 
 /* booking calendar */
 var cal=document.getElementById('cal');
-if(BOOKING_URL){var f=document.createElement('iframe');f.src=BOOKING_URL;f.title="Book a call with Ryan";f.loading="lazy";cal.appendChild(f)}
+if(BOOKING_URL){var f=document.createElement('iframe');f.src=BOOKING_URL;f.title="Book a call with Ryan";f.loading="lazy";cal.appendChild(f);
+  var a=document.createElement('a');a.href="https://calendar.app.google/1Cnuz5FxcMZ5GF5u5";a.target="_blank";a.rel="noopener";a.className="btn ghost sm";a.style.margin="12px";a.textContent="Open the calendar in a new tab ↗";cal.appendChild(a)}
 else{cal.innerHTML='<div class="empty"><div class="px">Calendar coming soon</div><p>Online booking opens shortly. For now, send me your preferred day and time and I\'ll send you a calendar invite with the meeting link.</p><div><a class="btn pri" href="mailto:'+EMAIL+'?subject=Book%20a%20call&body=Preferred%20day%20and%20time%20(with%20time%20zone)%3A%0AMy%20page%20link%3A">Request a time by email</a></div></div>'}
 
 /* floating dock, back to top, progress */
