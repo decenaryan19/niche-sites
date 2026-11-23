@@ -4,124 +4,327 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ryan Decena | Social Media Manager</title>
-<meta name="description" content="Social media manager who plans, designs, edits and publishes: content for Facebook, Instagram, TikTok and YouTube by Ryan Decena, Philippines.">
+<meta name="description" content="Social media manager from the Philippines: content strategy, TikTok and Reels, community management, paid social, analytics, landing pages and GoHighLevel funnels. Available for US/UK hours.">
 <meta property="og:title" content="Ryan Decena | Social Media Manager">
-<meta property="og:description" content="One person from idea to published post: plan, design, video and scheduling.">
+<meta property="og:description" content="Strategy, short-form video, community, paid social, analytics, landing pages and GHL follow-up, handled by one person.">
 <meta property="og:image" content="https://smm.decenaryan.site/og.jpg">
 <meta property="og:url" content="https://smm.decenaryan.site/">
-<meta name="theme-color" content="#0F172A">
+<meta name="theme-color" content="#13111a">
 <link rel="icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="site.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
-:root{--accent:#34D399;--accent-2:#F472B6;--on-accent:#03140d}
-.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
-.gallery figure{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0}
+/* Freelance Office vibe: night-shift office, pixel labels, orange accent, isometric 3D */
+:root{
+  --bg:#13111a;--bg2:#181522;--panel:#1c1925;--panel2:#221e2e;--line:#2e2a3a;--ink:#efeaf6;--muted:#a59db5;
+  --accent:#f28c28;--accent-ink:#1a1209;--purple:#8a63d2;--pink:#d64f8a;--blue:#2f8fd8;--green:#3ccf8e;
+  --f-display:"Space Grotesk",system-ui,sans-serif;--f-body:"Inter",system-ui,sans-serif;--f-pixel:"Press Start 2P",ui-monospace,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;overflow-x:hidden;
+  background-image:radial-gradient(ellipse 70% 45% at 75% -5%,#f28c2822,transparent),radial-gradient(ellipse 50% 40% at 0% 30%,#8a63d21c,transparent)}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left));padding-right:max(20px,env(safe-area-inset-right))}
+.px{font-family:var(--f-pixel);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);line-height:1.6}
+h1,h2,h3{font-family:var(--f-display);letter-spacing:-.02em;text-wrap:balance}
+h2{font-size:clamp(30px,4.4vw,48px);line-height:1.05;margin:12px 0 12px}
+.intro{color:var(--muted);max-width:62ch;margin-bottom:34px}
+section{padding:90px 0;position:relative}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:var(--f-body);transition:transform .2s,box-shadow .2s,background .2s}
+.btn.pri{background:var(--accent);color:var(--accent-ink);box-shadow:0 6px 0 #a8550f,0 14px 30px #f28c2840}
+.btn.pri:hover{transform:translateY(-2px);box-shadow:0 8px 0 #a8550f,0 18px 36px #f28c2855}
+.btn.pri:active{transform:translateY(4px);box-shadow:0 2px 0 #a8550f}
+.btn.ghost{border-color:var(--line);color:var(--ink);background:var(--panel)}
+.btn.ghost:hover{border-color:var(--accent)}
+.btn.sm{padding:9px 15px;font-size:13px;border-radius:10px}
+
+/* nav */
+nav.top{position:sticky;top:0;z-index:40;background:#13111acc;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:66px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:700}
+.brand canvas{width:30px;height:30px;image-rendering:pixelated}
+.brand span{color:var(--accent)}
+nav.top ul{display:flex;gap:24px;list-style:none;font-size:14px;color:var(--muted)}
+nav.top ul a{text-decoration:none}nav.top ul a:hover{color:var(--ink)}
+@media (max-width:860px){nav.top ul{display:none}}
+
+/* hero */
+.hero{padding:56px 0 40px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:30px;align-items:center}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(40px,6.2vw,76px);line-height:1;margin:16px 0 18px}
+.hero h1 b{color:var(--accent);font-weight:700}
+.hero .lead{font-size:clamp(17px,1.8vw,19px);color:var(--muted);max-width:54ch}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);margin-top:22px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 #3ccf8e88;animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px #3ccf8e00}100%{box-shadow:0 0 0 0 #3ccf8e00}}
+.stage{perspective:1100px}
+.office{position:relative;border:1px solid var(--line);border-radius:18px;background:linear-gradient(180deg,var(--panel),var(--bg2));overflow:hidden;transform-style:preserve-3d;transition:transform .25s ease-out;box-shadow:0 30px 80px #0009}
+.office .bar{display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--line);font-family:var(--f-pixel);font-size:8px;color:var(--muted)}
+.office .bar b{color:var(--accent)}
+.office canvas{width:100%;height:auto;display:block;image-rendering:pixelated}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:10px}
+@media (max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px}
+.stat b{display:block;font-family:var(--f-display);font-size:clamp(24px,3vw,32px);line-height:1.1}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* services */
+.svc{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;transform-style:preserve-3d;transition:transform .2s ease-out,border-color .2s;will-change:transform;min-width:0}
+.card:hover{border-color:#f28c2866}
+.card .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:22px;margin-bottom:14px;background:var(--panel2);transform:translateZ(30px)}
+.card h3{font-size:19px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:15px}
+.card ul{margin:10px 0 0 18px;color:var(--muted);font-size:14px;display:grid;gap:3px}
+
+/* reels */
+.reels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+@media (max-width:900px){.reels{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.reel{position:relative;aspect-ratio:9/16;border-radius:16px;overflow:hidden;background:#000;border:1px solid var(--line);transition:transform .3s}
+.reel:hover{transform:translateY(-6px) rotateZ(-1deg)}
+.reel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:pointer}
+.reel .lbl{position:absolute;left:10px;top:10px;font-family:var(--f-pixel);font-size:7px;background:#000a;padding:5px 7px;border-radius:6px;color:#fff}
+.snd{position:absolute;right:8px;bottom:8px;width:36px;height:36px;border-radius:50%;border:0;background:#13111acc;color:#fff;cursor:pointer;font-size:15px}
+.snd:hover{background:var(--accent);color:var(--accent-ink)}
+
+/* funnels */
+.fun{display:grid;grid-template-columns:1.5fr 1fr;gap:18px;align-items:start}
+@media (max-width:900px){.fun{grid-template-columns:1fr}}
+.browser{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;transform:perspective(1200px) rotateY(var(--ry,-6deg)) rotateX(3deg);transition:transform .4s;box-shadow:0 24px 60px #0008}
+.browser:hover{--ry:0deg}
+.browser .dots{display:flex;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line);align-items:center}
+.browser .dots i{width:9px;height:9px;border-radius:50%;background:#3a3550}
+.browser .dots span{margin-left:10px;font-size:12px;color:var(--muted);font-family:ui-monospace,Consolas,monospace;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.browser video{width:100%;aspect-ratio:900/600;object-fit:cover;object-position:top;background:#fff}
+.sites{display:grid;gap:14px}
+.sitepick{display:flex;flex-wrap:wrap;gap:8px}
+.sitepick button{font:inherit;font-size:13px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--muted);cursor:pointer}
+.sitepick button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:6px}
+.phone{border:6px solid #2a2638;border-radius:22px;overflow:hidden;background:#000;aspect-ratio:9/18;transform:translateY(var(--y,0));transition:transform .4s}
+.phone:nth-child(2){--y:-14px}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top}
+.ghl{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.gallery figure{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:transform .3s}
+.gallery figure:hover{transform:translateY(-4px)}
 .gallery img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top}
-.gallery figcaption{padding:12px 14px;font-size:14px}
+.gallery figcaption{padding:10px 12px;font-size:13px}
 .gallery figcaption span{display:block;color:var(--muted);font-size:12px}
+
+/* experience timeline */
+.tl{position:relative;display:grid;gap:18px;padding-left:28px}
+.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--accent),var(--purple))}
+.tl .card{position:relative}
+.tl .card::before{content:"";position:absolute;left:-26px;top:26px;width:14px;height:14px;border-radius:4px;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.tl .head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:baseline}
+.tl .when{font-family:var(--f-pixel);font-size:8px;color:var(--accent)}
+.tl .where{font-size:13px;color:var(--muted)}
+
+/* weekly */
 .week{display:grid;grid-template-columns:repeat(7,minmax(120px,1fr));gap:8px;overflow-x:auto;padding-bottom:6px}
-.day{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;min-height:130px;display:grid;align-content:start;gap:6px}
-.day b{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;color:var(--accent)}
-.day span{font-size:13px}
-.day small{font-size:11px;color:var(--muted)}
-.scroll{overflow-x:auto}
-.platforms{display:flex;flex-wrap:wrap;gap:8px}
-.platforms span{padding:8px 14px;border:1px solid var(--line);border-radius:10px;font-size:14px}
+.day{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px;min-height:120px;display:grid;align-content:start;gap:6px}
+.day b{font-family:var(--f-pixel);font-size:8px;color:var(--accent)}
+.day span{font-size:13px}.day small{font-size:11px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{padding:7px 13px;border:1px solid var(--line);border-radius:10px;font-size:14px;background:var(--panel)}
+
+/* booking */
+.book{display:grid;grid-template-columns:1fr 1.4fr;gap:22px;align-items:start}
+@media (max-width:900px){.book{grid-template-columns:1fr}}
+.cal{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;min-height:420px}
+.cal iframe{width:100%;height:640px;border:0;background:#fff}
+.cal .empty{padding:28px;display:grid;gap:14px;color:var(--muted)}
+.steps3{display:grid;gap:12px;margin-top:18px}
+.steps3 div{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--muted)}
+.steps3 b{flex:none;width:28px;height:28px;border-radius:8px;background:var(--panel2);color:var(--accent);display:grid;place-items:center;font-family:var(--f-pixel);font-size:9px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:15px}
+.row code{font-family:ui-monospace,Consolas,monospace;font-size:14px;user-select:all;word-break:break-all}
+.copy{font:inherit;font-size:12px;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:3px 9px;cursor:pointer}
+
+footer{padding:34px 0 120px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:var(--muted)}.others{display:flex;gap:16px;flex-wrap:wrap}
+
+/* floating CTA + back to top */
+.dock{position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));z-index:50;transform:translate(-50%,140%);transition:transform .45s cubic-bezier(.2,1.3,.4,1);display:flex;align-items:center;gap:12px;background:#1c1925f2;backdrop-filter:blur(12px);border:1px solid #f28c2855;border-radius:18px;padding:10px 10px 10px 12px;box-shadow:0 18px 50px #000a;max-width:calc(100vw - 32px)}
+.dock.show{transform:translate(-50%,0)}
+.dock canvas{width:36px;height:36px;image-rendering:pixelated;flex:none}
+.dock p{font-size:14px;line-height:1.3;min-width:0}
+.dock p b{display:block;font-family:var(--f-display)}
+.dock p span{color:var(--muted);font-size:12px}
+.dock .btns{display:flex;gap:8px;flex:none}
+@media (max-width:560px){.dock p span{display:none}.dock p{font-size:13px}.dock .btn.ghost{display:none}}
+.totop{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(92px,calc(env(safe-area-inset-bottom) + 92px));z-index:49;width:46px;height:46px;border-radius:14px;border:1px solid var(--line);background:var(--panel);color:var(--ink);display:grid;place-items:center;cursor:pointer;opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .25s,transform .25s}
+.totop.show{opacity:1;transform:none;pointer-events:auto}
+.totop:hover{border-color:var(--accent);color:var(--accent)}
+.totop svg{width:20px;height:20px}
+
+/* scroll reveal (only when JS runs) */
+.js .rv{opacity:0;transform:perspective(900px) translateY(40px) rotateX(10deg);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.progress{position:fixed;left:0;top:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--pink),var(--purple));z-index:60;width:0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}}
 </style>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<div class="progress" id="progress"></div>
 <nav class="top"><div class="wrap">
-  <a class="brand" href="#top">Ryan Decena <span>/ social</span></a>
-  <ul><li><a href="#work">Work</a></li><li><a href="#services">Services</a></li><li><a href="#system">Weekly system</a></li><li><a href="#about">About</a></li></ul>
-  <a class="btn solid sm" href="#contact">Hire me</a>
+  <a class="brand" href="#top"><canvas width="10" height="10" data-me aria-hidden="true"></canvas>Ryan Decena <span>/ social</span></a>
+  <ul><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#funnels">Funnels</a></li><li><a href="#experience">Experience</a></li><li><a href="#book">Book a call</a></li></ul>
+  <a class="btn pri sm" href="#book">Book a call</a>
 </div></nav>
 
 <main id="top">
 <header class="hero"><div class="wrap">
-  <span class="mono">Social media manager</span>
-  <h1>One person from <em>idea to published</em> post.</h1>
-  <p class="lead">I plan the calendar, write the captions, design the graphics, edit the videos and schedule them. You get consistent pages without managing a designer, an editor and a poster separately.</p>
-  <div class="cta"><a class="btn solid" href="#work">See the work</a><a class="btn ghost" href="#contact">Talk about your pages</a></div>
-  <div class="facts">
-    <div><b>Since 2018</b><span>running weekly church social pages</span></div>
-    <div><b>4 platforms</b><span>Facebook, Instagram, TikTok, YouTube</span></div>
-    <div><b>Design + video</b><span>no extra freelancer needed</span></div>
+  <div class="rv">
+    <div class="px">Social media HQ · open for clients</div>
+    <h1>Your social pages, handled <b>from idea to lead.</b></h1>
+    <p class="lead">I plan the strategy, make the TikToks, Reels and graphics, reply to your community, run your boosts, read the analytics, and build the landing pages and GoHighLevel funnels that turn followers into leads.</p>
+    <div class="cta"><a class="btn pri" href="#book">Book a free call</a><a class="btn ghost" href="#work">See the work</a></div>
+    <div class="status"><i></i>Available now · US / UK hours · Paid via Wise</div>
   </div>
+  <div class="stage rv"><div class="office" id="office">
+    <div class="bar"><span>FLOOR 1 · <b>SOCIAL MEDIA HQ</b></span><span id="clock">PH --:--</span></div>
+    <canvas id="hq" width="640" height="420" aria-label="Pixel office where Ryan runs strategy, content, community, ads, analytics and funnels"></canvas>
+  </div></div>
 </div></header>
 
+<div class="wrap"><div class="stats rv">
+  <div class="stat"><b>8 yrs</b><span>running weekly social pages</span></div>
+  <div class="stat"><b>4 platforms</b><span>Facebook, Instagram, TikTok, YouTube</span></div>
+  <div class="stat"><b>Content + funnels</b><span>posts, ads, landing pages, GHL</span></div>
+  <div class="stat"><b>US / UK hours</b><span>flexible time zones</span></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+  <div class="px rv">Services</div>
+  <h2 class="rv">Everything your pages need, in one person</h2>
+  <p class="intro rv">Pick one or let me run the whole thing.</p>
+  <div class="svc">
+    <article class="card rv"><div class="ic">🧭</div><h3>Strategy &amp; calendar</h3><p>A plan before anything gets posted.</p><ul><li>Content pillars and monthly calendar</li><li>Trend, sound, hashtag and keyword research</li><li>TikTok and YouTube SEO</li></ul></article>
+    <article class="card rv"><div class="ic">🎬</div><h3>Short-form video</h3><p>TikToks, Reels and Shorts that stop the scroll.</p><ul><li>Strong hooks, jump cuts, bold captions</li><li>Trending sounds and formats</li><li>CapCut, Premiere Pro, After Effects</li></ul></article>
+    <article class="card rv"><div class="ic">🎨</div><h3>Graphics &amp; UGC</h3><p>On-brand posts and creator content.</p><ul><li>Carousels and posts in Canva</li><li>UGC-style content and creator coordination</li><li>AI visuals and voiceovers when you lack footage</li></ul></article>
+    <article class="card rv"><div class="ic">💬</div><h3>Community management</h3><p>Your followers get answers, fast.</p><ul><li>Comment and DM replies</li><li>Moderation in your brand voice</li><li>Livestream setup with OBS</li></ul></article>
+    <article class="card rv"><div class="ic">🚀</div><h3>Boosts &amp; paid social</h3><p>Put budget behind what already works.</p><ul><li>Boosted posts and Meta Ads Manager</li><li>Targeting and creative tests</li><li>Adjusted based on results</li></ul></article>
+    <article class="card rv"><div class="ic">📊</div><h3>Analytics &amp; reports</h3><p>Know what grew and what to change.</p><ul><li>Meta Business Suite, TikTok, YouTube analytics</li><li>Reach, engagement, views, watch time</li><li>Monthly report with next steps</li></ul></article>
+    <article class="card rv"><div class="ic">🧲</div><h3>Landing pages &amp; funnels</h3><p>Somewhere for your followers to go.</p><ul><li>GoHighLevel funnels</li><li>WordPress / Elementor landing pages</li><li>On-page SEO, fast, mobile-first</li></ul></article>
+    <article class="card rv"><div class="ic">⚙️</div><h3>Lead follow-up &amp; email</h3><p>Leads never sit in a DM again.</p><ul><li>GHL pipelines and workflows</li><li>Email nurture sequences (MailerLite, GHL)</li><li>n8n, Make.com, Zapier</li></ul></article>
+  </div>
+</div></section>
+
 <section id="work"><div class="wrap">
-  <span class="mono">Work</span>
-  <h2>Brand kits &amp; social graphics</h2>
-  <p class="intro">Brand boards I made for client businesses and posts from the ministry pages I manage. Short-form video samples are on my <a href="https://video.decenaryan.site">video portfolio</a>.</p>
-  <div class="gallery">
-    <figure><img src="img/ccgm-alignment.png" alt="CCGM social post: Alignment is your Assignment" loading="lazy"><figcaption>Alignment is your Assignment<span>Church social post</span></figcaption></figure>
-    <figure><img src="img/ccgm-miracles.png" alt="CCGM social post: God Works Miracles" loading="lazy"><figcaption>God Works Miracles<span>Church social post</span></figcaption></figure>
-    <figure><img src="img/ccgm-coaching.png" alt="CCGM social post: Coaching and Mentoring" loading="lazy"><figcaption>Coaching &amp; Mentoring<span>Church event post</span></figcaption></figure>
-    <figure><img src="img/ccgm.png" alt="CCGM brand kit" loading="lazy"><figcaption>CCGM<span>Brand kit</span></figcaption></figure>
+  <div class="px rv">Short-form content</div>
+  <h2 class="rv">Reels and ads that play on their own</h2>
+  <p class="intro rv">Muted while you scroll. Tap one to hear it. More on my <a href="https://video.decenaryan.site">video portfolio</a>.</p>
+  <div class="reels rv" id="reels"></div>
+</div></section>
+
+<section id="funnels"><div class="wrap">
+  <div class="px rv">Landing pages &amp; funnels</div>
+  <h2 class="rv">Where your followers land</h2>
+  <p class="intro rv">Live websites and GoHighLevel funnels I built: fast, mobile-first and ready to capture leads.</p>
+  <div class="fun">
+    <div class="sites rv">
+      <div class="sitepick" id="sitepick" role="group" aria-label="Choose a website">
+        <button type="button" aria-pressed="true" data-v="media/web-recap-group.mp4" data-u="therecapgroup.com" data-h="https://therecapgroup.com/">The Recap Group</button>
+        <button type="button" aria-pressed="false" data-v="media/web-bc-traffic.mp4" data-u="bctrafficcoating.com" data-h="https://bctrafficcoating.com/">BC Traffic Coating</button>
+        <button type="button" aria-pressed="false" data-v="media/web-all-florida.mp4" data-u="all-florida-cpte-dwebsite.vercel.app" data-h="https://all-florida-cpte-dwebsite.vercel.app/">All Florida CPTED</button>
+      </div>
+      <a class="browser" id="browser" href="https://therecapgroup.com/" target="_blank" rel="noopener" style="display:block;text-decoration:none">
+        <div class="dots"><i></i><i></i><i></i><span id="burl">therecapgroup.com</span></div>
+        <video id="bvid" src="media/web-recap-group.mp4" muted loop playsinline autoplay aria-label="Website preview"></video>
+      </a>
+    </div>
+    <div class="rv">
+      <div class="phones">
+        <a class="phone" href="https://mushroom-website-001.vercel.app/" target="_blank" rel="noopener"><img src="img/web/mushroom-mobile.jpg" alt="Suwanee Bell Farms mobile site" loading="lazy"></a>
+        <a class="phone" href="https://pool-service-003.vercel.app/" target="_blank" rel="noopener"><img src="img/web/duphore-pool-mobile.jpg" alt="Duphore Pool Repair mobile site" loading="lazy"></a>
+        <a class="phone" href="https://gardenpool-001.vercel.app/" target="_blank" rel="noopener"><img src="img/web/garden-pool-mobile.jpg" alt="Garden Pool mobile site" loading="lazy"></a>
+      </div>
+      <p style="color:var(--muted);font-size:14px;margin-top:18px">GoHighLevel funnels:</p>
+      <div class="ghl">
+        <a class="btn ghost sm" href="https://app.gohighlevel.com/v2/preview/2akWfqTkj8evYn5LhoWl" target="_blank" rel="noopener">Nova Fitness Gym funnel ↗</a>
+        <a class="btn ghost sm" href="https://app.gohighlevel.com/v2/preview/LMPDcljJlbSZhrbW9jx4" target="_blank" rel="noopener">GHL funnel ↗</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="brand"><div class="wrap">
+  <div class="px rv">Brand kits &amp; graphics</div>
+  <h2 class="rv">Posts that look like the brand</h2>
+  <div class="gallery rv">
+    <figure><img src="img/ccgm-alignment.png" alt="Alignment is your Assignment social post" loading="lazy"><figcaption>Alignment is your Assignment<span>Church social post</span></figcaption></figure>
+    <figure><img src="img/ccgm-miracles.png" alt="God Works Miracles social post" loading="lazy"><figcaption>God Works Miracles<span>Church social post</span></figcaption></figure>
+    <figure><img src="img/ccgm-coaching.png" alt="Coaching and Mentoring event post" loading="lazy"><figcaption>Coaching &amp; Mentoring<span>Event post</span></figcaption></figure>
     <figure><img src="img/recap-group.png" alt="The Recap Group brand kit" loading="lazy"><figcaption>The Recap Group<span>Brand kit</span></figcaption></figure>
     <figure><img src="img/suwanee-bell-farms.png" alt="Suwanee Bell Farms brand kit" loading="lazy"><figcaption>Suwanee Bell Farms<span>Brand kit</span></figcaption></figure>
     <figure><img src="img/duphore-pool.png" alt="Duphore Pool Repair brand kit" loading="lazy"><figcaption>Duphore Pool Repair<span>Brand kit</span></figcaption></figure>
     <figure><img src="img/bc-traffic-coating.png" alt="BC Traffic Coating brand kit" loading="lazy"><figcaption>BC Traffic Coating<span>Brand kit</span></figcaption></figure>
     <figure><img src="img/all-florida-cpted.png" alt="All Florida CPTED brand kit" loading="lazy"><figcaption>All Florida CPTED<span>Brand kit</span></figcaption></figure>
+    <figure><img src="img/ccgm.png" alt="CCGM brand kit" loading="lazy"><figcaption>CCGM<span>Brand kit</span></figcaption></figure>
   </div>
 </div></section>
 
-<section id="services"><div class="wrap">
-  <span class="mono">Services</span>
-  <h2>What I handle</h2>
-  <div class="grid g3">
-    <div class="card"><span class="tag">Plan</span><h3>Content calendar</h3><ul><li>Monthly plan built around your offers and events</li><li>Mix of educational, promo and trend posts</li><li>Captions with hooks and calls to action</li></ul></div>
-    <div class="card"><span class="tag">Create</span><h3>Graphics &amp; video</h3><ul><li>Posts and carousels in your brand kit (Canva)</li><li>Reels, TikToks and Shorts (CapCut, Premiere)</li><li>AI images and video when you lack photos</li></ul></div>
-    <div class="card"><span class="tag">Run</span><h3>Publishing &amp; livestreams</h3><ul><li>Scheduling across all platforms</li><li>Livestream setup and monitoring (OBS)</li><li>Repetitive steps automated with n8n or Zapier</li></ul></div>
+<section id="experience"><div class="wrap">
+  <div class="px rv">Experience</div>
+  <h2 class="rv">8 years behind the pages</h2>
+  <div class="tl">
+    <article class="card rv"><div class="head"><h3>Multimedia &amp; Social Media Team Lead</h3><span class="when">2018 – PRESENT</span></div><div class="where">Church ministry</div>
+      <ul><li>Run Facebook, Instagram, TikTok and YouTube on a weekly schedule and lead the multimedia team.</li><li>Plan content pillars and monthly calendars; research trends and hashtags.</li><li>Make the posts: short-form video, long-form edits, posters, carousels, livestreams.</li><li>Reply to the community, track reach and engagement, and adjust content to what performs.</li></ul></article>
+    <article class="card rv"><div class="head"><h3>GoHighLevel &amp; Marketing Automation Specialist</h3><span class="when">2024 – 2026</span></div><div class="where">Freelance · International clients</div>
+      <ul><li>Managed clients' pages: calendars, scheduling, community replies and monthly reports.</li><li>Ran boosted posts and Meta ads and adjusted targeting and creatives.</li><li>Built landing pages and funnels in GHL and WordPress/Elementor with on-page SEO.</li><li>Connected social, ads and forms to GHL so every lead was followed up; wrote email nurture sequences.</li></ul></article>
+    <article class="card rv"><div class="head"><h3>Social Media &amp; AI Content Creator</h3><span class="when">2022 – 2024</span></div><div class="where">Freelance</div>
+      <ul><li>Managed Facebook, Instagram and TikTok pages for clients with Meta Business Suite.</li><li>Researched trends, sounds and hashtags; wrote captions and hooks in each brand's voice.</li><li>Designed in Canva, edited in CapCut, and coordinated UGC creators.</li><li>Tracked reach, engagement and follower growth, and reported results.</li></ul></article>
   </div>
-  <h3 style="margin:36px 0 12px;font-size:18px">Platforms &amp; tools</h3>
-  <div class="platforms"><span>Facebook</span><span>Instagram</span><span>TikTok</span><span>YouTube</span><span>Canva</span><span>CapCut</span><span>Premiere Pro</span><span>OBS Studio</span><span>GoHighLevel</span><span>n8n</span></div>
 </div></section>
 
 <section id="system"><div class="wrap">
-  <span class="mono">Weekly system</span>
-  <h2>What a week of your pages looks like</h2>
-  <p class="intro">An example rhythm for a local business. We adjust it to your audience, offers and how much footage you can send.</p>
-  <div class="scroll"><div class="week">
+  <div class="px rv">Weekly system</div>
+  <h2 class="rv">What a week of your pages looks like</h2>
+  <p class="intro rv">An example rhythm. We adjust it to your audience, offers and how much footage you can send.</p>
+  <div class="week rv">
     <div class="day"><b>MON</b><span>Plan &amp; approve the week</span><small>calendar review</small></div>
     <div class="day"><b>TUE</b><span>Educational carousel</span><small>FB · IG</small></div>
     <div class="day"><b>WED</b><span>Reel from your footage</span><small>IG · TikTok · Shorts</small></div>
-    <div class="day"><b>THU</b><span>Behind the scenes / team</span><small>Stories</small></div>
-    <div class="day"><b>FRI</b><span>Offer or promo post</span><small>FB · IG</small></div>
-    <div class="day"><b>SAT</b><span>Trend or community post</span><small>TikTok</small></div>
-    <div class="day"><b>SUN</b><span>Live or recap video</span><small>FB · YouTube</small></div>
-  </div></div>
-  <div class="steps" style="margin-top:40px">
-    <div class="step"><h3>Audit</h3><p>I look at your pages, competitors and what has worked before.</p></div>
-    <div class="step"><h3>Plan</h3><p>A monthly calendar you approve before anything goes out.</p></div>
-    <div class="step"><h3>Create &amp; post</h3><p>Graphics, captions and videos made and scheduled each week.</p></div>
-    <div class="step"><h3>Report</h3><p>A short monthly summary of what grew and what to change.</p></div>
+    <div class="day"><b>THU</b><span>Behind the scenes</span><small>Stories</small></div>
+    <div class="day"><b>FRI</b><span>Offer + boost</span><small>FB · IG ads</small></div>
+    <div class="day"><b>SAT</b><span>Trend post</span><small>TikTok</small></div>
+    <div class="day"><b>SUN</b><span>Recap + report</span><small>analytics</small></div>
   </div>
+  <h3 class="rv" style="margin:44px 0 14px;font-size:20px">Tools I use</h3>
+  <div class="chips rv"><span>Meta Business Suite</span><span>Meta Ads Manager</span><span>TikTok</span><span>YouTube Studio</span><span>Canva</span><span>CapCut</span><span>Premiere Pro</span><span>After Effects</span><span>ChatGPT</span><span>Claude</span><span>ElevenLabs</span><span>GoHighLevel</span><span>WordPress</span><span>Elementor</span><span>MailerLite</span><span>n8n</span><span>Zapier</span><span>Make.com</span><span>OBS Studio</span></div>
 </div></section>
 
-<section id="about"><div class="wrap about">
-  <img src="ryan-decena.png" alt="Ryan Decena" width="200" height="200" loading="lazy">
-  <div>
-    <span class="mono">About</span>
-    <h2>Hi, I'm Ryan.</h2>
-    <p>Since 2018 I've led the multimedia and social media team at our church: weekly posts, videos, posters and livestreams across Facebook, TikTok, YouTube and Instagram, plus coordinating the team behind them.</p>
-    <p>For international clients I've created brand kits, short-form content and automated social workflows. I also build websites and GoHighLevel systems, so your pages, landing pages and CRM can work together.</p>
-  </div>
-</div></section>
-
-<section><div class="wrap">
-  <div class="contact" id="contact">
-    <span class="mono">Contact</span>
-    <h2>Want your pages posting consistently again?</h2>
-    <p style="color:var(--muted);max-width:60ch">Send me your page links and what you want more of: followers, messages, bookings. I'll reply with a quick audit idea, usually within 24 hours (Philippine time).</p>
-    <div class="rows">
-      <div class="row">Email <code>ryan.barbacena.decena@gmail.com</code><button class="copy" data-copy="ryan.barbacena.decena@gmail.com">Copy</button></div>
-      <div class="row">LinkedIn <a href="https://www.linkedin.com/in/ryan-decena-aba878122" target="_blank" rel="noopener">ryan-decena</a></div>
+<section id="book"><div class="wrap">
+  <div class="book">
+    <div class="rv">
+      <div class="px">Book a call</div>
+      <h2>Pick a time. Let's talk about your pages.</h2>
+      <p class="intro" style="margin-bottom:0">A free 30-minute call. Choose a slot and you'll both get a calendar invite with the meeting link by email.</p>
+      <div class="steps3">
+        <div><b>1</b>Pick a day and time that works for you.</div>
+        <div><b>2</b>Add your name, email and your page link.</div>
+        <div><b>3</b>Check your email for the invite and Google Meet link.</div>
+      </div>
+      <div style="margin-top:26px;display:grid;gap:10px">
+        <div class="row">Prefer email? <code>ryan.barbacena.decena@gmail.com</code><button class="copy" type="button" data-copy="ryan.barbacena.decena@gmail.com">Copy</button></div>
+      </div>
     </div>
-    <div class="cta" style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn solid" href="mailto:ryan.barbacena.decena@gmail.com?subject=Social%20media%20management">Email me</a></div>
+    <div class="cal rv" id="cal"></div>
   </div>
 </div></section>
 </main>
@@ -130,6 +333,100 @@
   <span>© <span data-year>2026</span> Ryan Decena · Quezon City, Philippines</span>
   <span class="others"><a href="https://decenaryan.site">Main site</a><a href="https://video.decenaryan.site">Video editing</a><a href="https://ai.decenaryan.site">AI automation</a></span>
 </div></footer>
-<script src="site.js"></script>
+
+<div class="dock" id="dock" role="complementary" aria-label="Contact Ryan">
+  <canvas width="10" height="10" data-me aria-hidden="true"></canvas>
+  <p><b>Want your pages handled?</b><span>Let's connect. Free 30-min call.</span></p>
+  <div class="btns"><a class="btn ghost sm" href="mailto:ryan.barbacena.decena@gmail.com?subject=Social%20media%20management">Email</a><a class="btn pri sm" href="#book">Hire me</a></div>
+</div>
+<button class="totop" id="totop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg></button>
+
+<script>
+/* ===== Booking: paste your Google Calendar appointment schedule link here ===== */
+var BOOKING_URL = ""; // e.g. "https://calendar.app.google/XXXX" or "https://calendar.google.com/calendar/appointments/schedules/XXXX?gv=true"
+var EMAIL="ryan.barbacena.decena@gmail.com";
+
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* pixel Ryan */
+function sprite(ctx,x,y,s,shirt){var skin="#e0a878",hair="#2b2118",P=function(c,a,b,w,h){ctx.fillStyle=c;ctx.fillRect(Math.round(x+a*s),Math.round(y+b*s),Math.ceil((w||1)*s),Math.ceil((h||1)*s))};
+  P(hair,2,0,4);P(hair,1,1,6);P(skin,2,2,4,3);P(hair,1,2,1,2);P("#1d1a24",3,3);P("#1d1a24",5,3);P(shirt,1,5,6,3);P(skin,0,5,1,2);P(skin,7,5,1,2);P("#2d2a3a",2,8,2,2);P("#2d2a3a",4,8,2,2)}
+document.querySelectorAll('canvas[data-me]').forEach(function(c){var x=c.getContext('2d');x.imageSmoothingEnabled=false;sprite(x,1,0,1,"#f28c28")});
+
+/* isometric office */
+var cv=document.getElementById('hq'),ctx=cv.getContext('2d');ctx.imageSmoothingEnabled=false;
+var TW=50,TH=25,OX=320,OY=70;
+function iso(gx,gy){return[OX+(gx-gy)*TW/2,OY+(gx+gy)*TH/2]}
+function quad(p,f,s){ctx.beginPath();p.forEach(function(q,i){i?ctx.lineTo(q[0],q[1]):ctx.moveTo(q[0],q[1])});ctx.closePath();ctx.fillStyle=f;ctx.fill();if(s){ctx.strokeStyle=s;ctx.stroke()}}
+function rgba(h,a){var n=parseInt(h.slice(1),16);return"rgba("+(n>>16&255)+","+(n>>8&255)+","+(n&255)+","+a+")"}
+var ROOMS=[{x:0,y:0,c:"#2f8fd8",n:"STRATEGY"},{x:3,y:0,c:"#d64f8a",n:"STUDIO"},{x:6,y:0,c:"#8a63d2",n:"ADS"},
+           {x:0,y:4,c:"#3ccf8e",n:"COMMUNITY"},{x:3,y:4,c:"#f0b429",n:"ANALYTICS"},{x:6,y:4,c:"#f28c28",n:"FUNNELS"}];
+var floaters=[],t0=performance.now();
+function spawn(){var r=ROOMS[Math.floor(Math.random()*ROOMS.length)];var p=iso(r.x+1.4,r.y+1.6);floaters.push({x:p[0]+(Math.random()*20-10),y:p[1]-30,life:0,ch:["♥","💬","▶","★","↗","@"][Math.floor(Math.random()*6)],c:r.c})}
+function draw(t){
+  ctx.clearRect(0,0,cv.width,cv.height);
+  for(var gx=0;gx<9;gx++)for(var gy=0;gy<7;gy++)quad([iso(gx,gy),iso(gx+1,gy),iso(gx+1,gy+1),iso(gx,gy+1)],(gx+gy)%2?"#2a2540":"#231f36");
+  var H=40;quad([iso(0,0),iso(9,0),[iso(9,0)[0],iso(9,0)[1]-H],[iso(0,0)[0],iso(0,0)[1]-H]],"#3a3355");
+  quad([iso(0,0),iso(0,7),[iso(0,7)[0],iso(0,7)[1]-H],[iso(0,0)[0],iso(0,0)[1]-H]],"#2f2a46");
+  ROOMS.forEach(function(r,i){var w=2.8,h=2.8;quad([iso(r.x+.1,r.y+.1),iso(r.x+w,r.y+.1),iso(r.x+w,r.y+h),iso(r.x+.1,r.y+h)],rgba(r.c,.18+.06*Math.sin(t/700+i)),rgba(r.c,.8));
+    var d=iso(r.x+1.4,r.y+1.4);quad([[d[0]-18,d[1]+2],[d[0],d[1]-7],[d[0]+18,d[1]+2],[d[0],d[1]+11]],"#8b6a4a");quad([[d[0]-18,d[1]+2],[d[0],d[1]+11],[d[0],d[1]+16],[d[0]-18,d[1]+7]],"#6f5338");
+    ctx.fillStyle="#26232f";ctx.fillRect(d[0]-8,d[1]-17,16,10);ctx.fillStyle=Math.floor(t/500+i)%2?r.c:rgba(r.c,.6);ctx.fillRect(d[0]-6,d[1]-15,12,6);
+    ctx.font="7px 'Press Start 2P', monospace";ctx.textAlign="center";ctx.fillStyle=r.c;var l=iso(r.x+1.4,r.y+2.6);ctx.fillText(r.n,l[0],l[1]+14)});
+  var k=Math.floor(t/2600)%ROOMS.length,r=ROOMS[k],a=iso(r.x+1.9,r.y+1.9),bob=Math.round(Math.sin(t/260)*1.5);sprite(ctx,a[0]-6,a[1]-34+bob,3,"#f28c28");
+  ctx.fillStyle="#3ccf8e";ctx.beginPath();ctx.arc(a[0]+14,a[1]-38+bob,3.5,0,7);ctx.fill();
+  if(!reduce&&Math.random()<.05)spawn();
+  floaters=floaters.filter(function(f){f.life+=1;f.y-=.6;ctx.globalAlpha=Math.max(0,1-f.life/90);ctx.font="14px sans-serif";ctx.fillStyle=f.c;ctx.fillText(f.ch,f.x,f.y);ctx.globalAlpha=1;return f.life<90});
+}
+function loop(t){draw(t);if(!reduce)requestAnimationFrame(loop)}
+requestAnimationFrame(loop);if(document.fonts)document.fonts.ready.then(function(){draw(performance.now())});
+function tick(){try{document.getElementById('clock').textContent="PH "+new Date().toLocaleTimeString("en-PH",{timeZone:"Asia/Manila",hour:"2-digit",minute:"2-digit"})}catch(e){}}tick();setInterval(tick,30000);
+
+/* 3D tilt (office + cards), desktop pointers only */
+var fine=matchMedia('(pointer:fine)').matches;
+function tilt(el,max){if(!fine||reduce)return;el.addEventListener('mousemove',function(e){var b=el.getBoundingClientRect(),x=(e.clientX-b.left)/b.width-.5,y=(e.clientY-b.top)/b.height-.5;el.style.transform="perspective(900px) rotateY("+(x*max)+"deg) rotateX("+(-y*max)+"deg)"});el.addEventListener('mouseleave',function(){el.style.transform=""})}
+tilt(document.getElementById('office'),10);document.querySelectorAll('.svc .card').forEach(function(c){tilt(c,8)});
+
+/* scroll reveal with stagger */
+var rvs=[].slice.call(document.querySelectorAll('.rv'));
+if('IntersectionObserver' in window&&!reduce){var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var sib=[].slice.call(e.target.parentNode.children).filter(function(n){return n.classList.contains('rv')});e.target.style.transitionDelay=Math.min(sib.indexOf(e.target),6)*70+"ms";e.target.classList.add('in');ro.unobserve(e.target)}})},{threshold:.12});rvs.forEach(function(el){ro.observe(el)})}
+else rvs.forEach(function(el){el.classList.add('in')});
+
+/* reels: autoplay muted while on screen */
+var REELS=[{s:"media/ad-elias.mp4",p:"media/ad-elias.jpg",l:"Ad · Elias"},
+  {s:"https://video.decenaryan.site/media/ai-skincare-1.mp4",p:"https://video.decenaryan.site/media/ai-skincare-1.jpg",l:"AI UGC"},
+  {s:"https://video.decenaryan.site/media/short-date-smarter.mp4",p:"https://video.decenaryan.site/media/short-date-smarter.jpg",l:"Campaign"},
+  {s:"https://video.decenaryan.site/media/reels-1.mp4",p:"https://video.decenaryan.site/media/reels-1.jpg",l:"Reel"},
+  {s:"https://video.decenaryan.site/media/short-podcast.mp4",p:"https://video.decenaryan.site/media/short-podcast.jpg",l:"Podcast clip"}];
+var box=document.getElementById('reels');
+box.innerHTML=REELS.map(function(r,i){return '<div class="reel"><video muted loop playsinline preload="none" poster="'+r.p+'" data-src="'+r.s+'" aria-label="'+r.l+' video"></video><span class="lbl">'+r.l+'</span><button class="snd" type="button" aria-label="Turn sound on" aria-pressed="false">🔇</button></div>'}).join('');
+var vids=[].slice.call(document.querySelectorAll('video[data-src]')).concat([document.getElementById('bvid')]);
+function play(v){if(v.dataset.src&&!v.getAttribute('src'))v.src=v.dataset.src;var p=v.play();if(p&&p.catch)p.catch(function(){})}
+if('IntersectionObserver' in window){var vo=new IntersectionObserver(function(es){es.forEach(function(e){e.isIntersecting&&e.intersectionRatio>=.3?play(e.target):e.target.pause()})},{threshold:[0,.3],rootMargin:"120px 0px"});vids.forEach(function(v){vo.observe(v)})}else vids.forEach(play);
+box.addEventListener('click',function(e){var b=e.target.closest('.snd'),v=b?b.parentNode.querySelector('video'):e.target.closest('video');if(!v)return;var on=v.muted;
+  box.querySelectorAll('video').forEach(function(o){if(o!==v){o.muted=true;o.parentNode.querySelector('.snd').textContent='🔇'}});
+  v.muted=!on;var s=v.parentNode.querySelector('.snd');s.textContent=on?'🔊':'🔇';s.setAttribute('aria-pressed',String(on));s.setAttribute('aria-label',on?'Mute':'Turn sound on');if(on)play(v)});
+
+/* website switcher */
+var pick=document.getElementById('sitepick'),bv=document.getElementById('bvid');
+pick.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;pick.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});bv.src=b.dataset.v;play(bv);document.getElementById('burl').textContent=b.dataset.u;document.getElementById('browser').href=b.dataset.h});
+
+/* booking calendar */
+var cal=document.getElementById('cal');
+if(BOOKING_URL){var f=document.createElement('iframe');f.src=BOOKING_URL;f.title="Book a call with Ryan";f.loading="lazy";cal.appendChild(f)}
+else{cal.innerHTML='<div class="empty"><div class="px">Calendar coming soon</div><p>Online booking opens shortly. For now, send me your preferred day and time and I\'ll send you a calendar invite with the meeting link.</p><div><a class="btn pri" href="mailto:'+EMAIL+'?subject=Book%20a%20call&body=Preferred%20day%20and%20time%20(with%20time%20zone)%3A%0AMy%20page%20link%3A">Request a time by email</a></div></div>'}
+
+/* floating dock, back to top, progress */
+var dock=document.getElementById('dock'),top2=document.getElementById('totop'),prog=document.getElementById('progress'),book=document.getElementById('book'),inBook=false;
+if('IntersectionObserver' in window)new IntersectionObserver(function(es){inBook=es[0].isIntersecting;onScroll()},{threshold:.2}).observe(book);
+function onScroll(){var y=window.scrollY,h=document.documentElement.scrollHeight-innerHeight;dock.classList.toggle('show',y>innerHeight*.6&&!inBook);top2.classList.toggle('show',y>500);prog.style.width=(h>0?y/h*100:0)+"%"}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+top2.addEventListener('click',function(){scrollTo({top:0,behavior:reduce?'auto':'smooth'})});
+
+document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){var v=b.dataset.copy;if(navigator.clipboard)navigator.clipboard.writeText(v).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1400)},function(){})})});
+document.querySelectorAll('[data-year]').forEach(function(e){e.textContent=new Date().getFullYear()});
+document.addEventListener('visibilitychange',function(){if(document.hidden)vids.forEach(function(v){v.pause()})});
+})();
+</script>
 </body>
 </html>
